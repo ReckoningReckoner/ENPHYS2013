@@ -5,7 +5,7 @@ function regressionplot()
     [A, B, dA, dB] = wregression(x, y, dy);
 
     hold on;
-    errorbtar(x, y, dy, '.');
+    errorbar(x, y, dy, '.');
     plot(x, B * x + A);
     xlabel('x-axis');
     ylabel('y-axis');
