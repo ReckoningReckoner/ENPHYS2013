@@ -8,4 +8,10 @@ function [L, R, dL, dR] = impedance(f, V, I, dV, dI)
     R = sqrt(Rsq);
     dR = abs(sqrt(Rsq + dRsq) - sqrt(Rsq));
     dL = abs(sqrt(Lsq + dLsq) - sqrt(Lsq));
+    
+    hold on;
+    title('Inductor circuit');
+    errorbar(omega_sq, Zsq, dZSq, '*');
+    plot(omega_sq, R^2 + omega_sq*Lsq);
+    hold off;
 end

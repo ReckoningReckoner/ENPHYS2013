@@ -9,4 +9,10 @@ function [C, R, dC, dR] = impedance2(f, V, I, dV, dI)
 
     R = sqrt(Rsq);
     dR = abs(sqrt(Rsq + dRsq) - sqrt(Rsq));
+
+    hold on;
+    title('Capacitor circuit');
+    errorbar(omega_sq_inv, Zsq, dZSq, '*');
+    plot(omega_sq_inv, R^2 + omega_sq_inv * Csq);
+    hold off;
 end
