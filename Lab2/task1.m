@@ -3,7 +3,6 @@ x = 0:pi/100:2*pi;
 h = pi/2;
 
 factor = 10;
-
 h_optimal = -1;
 min_sum = -1;
 hold on;
