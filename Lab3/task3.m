@@ -1,7 +1,10 @@
 Ntheta = 10;
 Nphi = 10;
-atheta = pi/2;
-aphi = pi/4;
+btheta = pi/2;
+bphi = pi/4;
 
-C = double_simpson_integral(Ntheta, Nphi, atheta, aphi);
+f = @(theta, phi) 10 .* cos(theta) .* sin(phi);
+
+C = simp2(f, 0, btheta, 0, bphi, Ntheta, Nphi);
 fprintf('The value of C is %.3f\n', C)
+
