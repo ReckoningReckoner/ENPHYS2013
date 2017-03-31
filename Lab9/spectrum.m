@@ -2,10 +2,10 @@ function [C, f]=spectrum(v, T, N)
     C = cdft(v);
     f0 = 1/T;
     kmax = floor(N/2);
-    if mod(N, 2) ~= 0
-        f = f0 * [0:1:kmax, -kmax:1:-1];
+    if mod(N, 2) ~= 0 %odd
+        f = f0 * [0:kmax, -kmax:-1];
     else
-        f = f0 * [0:1:kmax, -kmax+1:1:-1];
+        f = f0 * [0:kmax, -kmax+1:-1];
     end
 
     hold on;
